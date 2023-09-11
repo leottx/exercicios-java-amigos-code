@@ -5,24 +5,25 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         /*
-            Write a program that reverses an array of Strings
-            String[] content = {"you", "are", "how", "hello"}
-            Tip. Use for loop and you to start at highest index.
-            Output should be: hello how are you?. Note question mark at the end
+            Write a program that adds total amount for this string "0.90, 1.00, 9.00, 8.78, 0.01".
+
+            Tip:
+                - String input = "0.90, 1.00, 9.00, 8.78, 0.01";
+                - create variable to store result. double result = 0;
+                - convert string to array by using the String[] numbers = input.split(", ")
+                - then loop.
+                - convert each string to decimal and add to current result
+                - use Double.parseDouble(string) to convert a string to double
         */
 
-        String[] content = {"you", "are", "how", "hello"};
-        String sentence = "";
+        String doubleString = "0.90, 1.00, 9.00, 8.78, 0.01";
+        String[] doubleStringArray = doubleString.split(",");
+        double result = 0;
 
-        for (int i = content.length - 1; i >= 0; i--) {
-            if (i != 0) {
-                sentence += content[i] + " ";
-                continue;
-            }
-
-            sentence += content[i] + "?";
+        for (int i = 0; i < doubleStringArray.length ; i++) {
+            result += Double.parseDouble(doubleStringArray[i]);
         }
 
-        System.out.println(sentence);
+        System.out.println(result);
     }
 }
