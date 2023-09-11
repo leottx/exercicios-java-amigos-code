@@ -1,9 +1,13 @@
 package com.leonardotx;
 
-import java.util.Arrays;
+import com.leonardotx.email.EmailValidator;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.printf("Hello Java!");
+        EmailValidator email1 = new EmailValidator();
+        EmailValidator email2 = new EmailValidator();
+
+        System.out.println(email1.validateEmail("fake@fake.com"));
+        System.out.println(email2.validateEmail("test.com"));
     }
 }
