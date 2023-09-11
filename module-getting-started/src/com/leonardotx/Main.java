@@ -4,19 +4,24 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        // using your answer from Q5 above, create a second array which is initialized using your original array
-        // hint: instead of using the `new` keyword, try simply giving the name of your original array
+        // using your answer to Q6, create another array which is A COPY off of your original array (using the `Arrays.copyOf()` method)
+        // NOTE that the `.copyOf()` method accepts two arguments, first being the array that's being copied and second being the length of the new array
         // change the value at index 0 of the new array to "z"
-        // print both of your arrays and compare
+        // print both of the arrays and compare
 
         String[] stringArray = {"a", "b", "c", "d"};
-        String [] copyStringArray = stringArray;
+        String [] copyStringArray = Arrays.copyOf(stringArray, stringArray.length);
 
         copyStringArray[0] = "z";
 
-        /* Ambos são alterados pois arrays são reference types, ou seja, cada variável na stack é um ponteiro para o
-        mesmo espaço de memória no heap */
+        /* O método Arrays.copyOf() cria um novo espaço de memória do heap para que o novo array seja de fato uma cópia
+        do array e não uma cópia do ponteiro */
         System.out.println(Arrays.toString(stringArray));
         System.out.println(Arrays.toString(copyStringArray));
+
+        for (String str:
+             stringArray) {
+            System.out.println(str);
+        }
     }
 }
