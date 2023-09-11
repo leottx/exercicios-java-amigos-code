@@ -12,7 +12,7 @@ public class Main {
         String[] stringArray = {"i", "sure", "do", "love", "bees"};
 
         for (int i = 0; i < stringArray.length; i++) {
-            stringArray[i] = stringArray[i].toUpperCase();
+            stringArray[i] = stringArray[i].toUpperCase().charAt(0) + stringArray[i].substring(1);
         }
 
         System.out.print(Arrays.toString(stringArray));
