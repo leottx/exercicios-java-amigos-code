@@ -4,33 +4,23 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println(reverseString("Leonardo Teixeira"));
-        System.out.println(reverseStringAlternative("Leonardo Teixeira"));
+        String text = "   amig os cod e  ";
+
+        System.out.println(fixString(text));
     }
 
-    public static String reverseString(String text) {
-        String[] textArray = text.split("");
-        String reversedString = "";
+    public static String fixString(String text) {
+        String[] fixedStringArray = text.trim().split("\\s+");
+        StringBuilder fixedString = new StringBuilder();
 
-        for (int i = text.length() - 1; i >= 0 ; i--) {
-            reversedString += textArray[i];
+        for (String word: fixedStringArray) {
+            if (!word.isEmpty()) {
+                fixedString.append(word);
+            }
         }
 
-        return reversedString;
-    }
+        fixedString.replace(0, 1, fixedString.substring(0, 1).toUpperCase());
 
-    // Solução alternativa e mais otimizada
-    public static String reverseStringAlternative(String input) {
-        if (input == null || input.isEmpty()) {
-            return input; // Return the input as is for empty or null strings
-        }
-
-        StringBuilder reversed = new StringBuilder();
-
-        for (int i = input.length() - 1; i >= 0; i--) {
-            reversed.append(input.charAt(i));
-        }
-
-        return reversed.toString();
+        return fixedString.toString();
     }
 }
