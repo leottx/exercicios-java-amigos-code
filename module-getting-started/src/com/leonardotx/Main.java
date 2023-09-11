@@ -7,7 +7,9 @@ public class Main {
         int[] integers = new int[3];
 
         for (int i = 0; i < integers.length; i++) {
-            System.out.println("Index " + i + ": " + integers[i]);
+            integers[i] = 4;
         }
+
+        System.out.print(Arrays.toString(integers));
     }
 }
