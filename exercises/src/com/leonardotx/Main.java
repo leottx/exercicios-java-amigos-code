@@ -4,23 +4,47 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        String text = "   amig os cod e  ";
+        String[] stringArray = {"hello", "bingo", "ola", "bye", "ciao"};
 
-        System.out.println(fixString(text));
+        System.out.println(getLongest(stringArray));
     }
 
-    public static String fixString(String text) {
-        String[] fixedStringArray = text.trim().split("\\s+");
-        StringBuilder fixedString = new StringBuilder();
+    public static String getLongest(String[] stringArray) {
+        String longestString = stringArray[0];
 
-        for (String word: fixedStringArray) {
-            if (!word.isEmpty()) {
-                fixedString.append(word);
+        for (int i = 0; i < stringArray.length ; i++) {
+            if (longestString.length() > stringArray[i].length()) {
+                continue;
+            }
+
+            longestString = stringArray[i];
+        }
+
+        return longestString;
+    }
+
+    // Solução alternativa e mais completa, pois trata casos com argumento nulo ou String vazia e também palavras repetidas ou de mesmo tamanho.
+    public static String getLongest(String[] stringArray) {
+        if(stringArray == null || stringArray.length == 0) {
+            return "";
+        }
+
+        int maxLength = 0;
+        String longestString = "";
+
+        for (String str:
+             stringArray) {
+            if (str.length() > maxLength) {
+                maxLength = str.length();
+                longestString = str;
+                continue;
+            }
+
+            if (str.length() == maxLength && !longestString.contains(str)) {
+                longestString += ", " + str;
             }
         }
 
-        fixedString.replace(0, 1, fixedString.substring(0, 1).toUpperCase());
-
-        return fixedString.toString();
+        return longestString;
     }
 }
