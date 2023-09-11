@@ -4,14 +4,9 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int[] integers = new int[3];
+        int[] numbers = {1, 2, 3, 4, 5};
 
-        for (int i = 0; i < integers.length; i++) {
-            integers[i] = 4;
-        }
-
-        integers[1] = 17;
-
-        System.out.print(Arrays.toString(integers));
+        // É exibida a exceção "ArrayIndexOutOfBoundsException", pois o índice 5 não existe para o array de tamanho 5.
+        numbers[5] = 6;
     }
 }
