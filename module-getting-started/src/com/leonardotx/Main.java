@@ -10,6 +10,8 @@ public class Main {
             integers[i] = 4;
         }
 
+        integers[1] = 17;
+
         System.out.print(Arrays.toString(integers));
     }
 }
