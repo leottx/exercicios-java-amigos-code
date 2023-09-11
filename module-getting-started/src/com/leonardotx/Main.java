@@ -4,17 +4,25 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        // create a for loop which goes through each string in our array
-        // make each word uppercase
-        // assign the value in the array to the uppercase string
-        // print our resulting array
+        /*
+            Write a program that reverses an array of Strings
+            String[] content = {"you", "are", "how", "hello"}
+            Tip. Use for loop and you to start at highest index.
+            Output should be: hello how are you?. Note question mark at the end
+        */
 
-        String[] stringArray = {"i", "sure", "do", "love", "bees"};
+        String[] content = {"you", "are", "how", "hello"};
+        String sentence = "";
 
-        for (int i = 0; i < stringArray.length; i++) {
-            stringArray[i] = stringArray[i].toUpperCase().charAt(0) + stringArray[i].substring(1);
+        for (int i = content.length - 1; i >= 0; i--) {
+            if (i != 0) {
+                sentence += content[i] + " ";
+                continue;
+            }
+
+            sentence += content[i] + "?";
         }
 
-        System.out.print(Arrays.toString(stringArray));
+        System.out.println(sentence);
     }
 }
