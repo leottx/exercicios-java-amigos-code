@@ -1,17 +1,15 @@
 package com.leonardotx;
 
-import java.util.Scanner;
-
 public class Main {
     public static void main(String[] args) {
-        System.out.println(capitalizeFirstLetter("hello world"));
+        System.out.println(countWordsInSentence("hello world"));
     }
 
-    public static String capitalizeFirstLetter(String word) {
-        if (word == null || word.isEmpty()) {
-            return word;
+    public static int countWordsInSentence(String sentence) {
+        if (sentence == null || sentence.isEmpty()) {
+            return 0;
         }
 
-        return word.substring(0, 1).toUpperCase() + word.substring(1);
+        return sentence.split(" ").length;
     }
 }
