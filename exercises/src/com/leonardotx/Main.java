@@ -1,40 +1,23 @@
 package com.leonardotx;
 
-import javax.swing.*;
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        String path = "src/test.txt";
-
         try {
-            File newFile = createFile(path);
-            writeOnFile(newFile, true, "Hello");
-            writeOnFile(newFile, true, "World");
-        } catch (IOException e) {
+            File newFile = new File("src/test.txt");
+            Scanner sc = new Scanner(newFile);
+            readFile(sc);
+        } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         }
     }
 
-    public static File createFile(String path) throws IOException {
-        File newFile = new File(path);
-
-        if (!newFile.exists()) {
-            newFile.createNewFile();
+    public static void readFile(Scanner sc) {
+        while(sc.hasNext()) {
+            System.out.println(sc.nextLine());
         }
-
-        return newFile;
-    }
-
-    public static void writeOnFile(File file, boolean append, String content) throws IOException {
-        FileWriter fileWriter = new FileWriter(file, append);
-        PrintWriter printWriter = new PrintWriter(fileWriter);
-
-        printWriter.println(content);
-        printWriter.flush();
-        printWriter.close();
     }
 }
