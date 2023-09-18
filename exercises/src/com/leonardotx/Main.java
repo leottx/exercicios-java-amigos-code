@@ -1,6 +1,7 @@
 package com.leonardotx;
 
 import java.io.*;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,6 +33,7 @@ public class Main {
         try {
             File dataFile = createFile(path);
             writeOnFile(dataFile, data);
+            readFile(dataFile);
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
@@ -55,4 +57,15 @@ public class Main {
         bf.write(content);
         bf.close();
     }
+
+    public static void readFile(File file) throws IOException {
+        Scanner sc = new Scanner(file);
+
+        while(sc.hasNext()) {
+            System.out.println(sc.nextLine());
+        }
+
+        sc.close();
+    }
+
 }
