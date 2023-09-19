@@ -48,6 +48,18 @@ public class CarDealership {
         return count;
     }
 
+    public Car findCarByManufacturer(String manufacturer) {
+        Car carMatch = null;
+        for (Car car : carsInStock) {
+            if (car != null && car.getManufacturer().equalsIgnoreCase(manufacturer)) {
+                carMatch = car;
+                break;
+            }
+        }
+
+        return carMatch;
+    }
+
     @Override
     public String toString() {
         return "CarDealership{" +

@@ -23,5 +23,15 @@ public class Main {
                 System.out.println(car.getManufacturer() + " " + car.getEngineType());
             }
         }
+
+        // Finding car by manufacturer
+        Car carFound = dealership.findCarByManufacturer("Nissan");
+
+        if (carFound != null) {
+            System.out.println("Car found: " + carFound.toString());
+        } else {
+            System.out.println("No car with this manufacturer was found.");
+        }
+
     }
 }
