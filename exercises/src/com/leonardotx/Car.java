@@ -5,9 +5,9 @@ import java.math.BigDecimal;
 public class Car {
     private String manufacture;
     private BigDecimal price;
-    private String engineType;
+    private EngineType engineType;
 
-    public Car(String manufacture, BigDecimal price, String engineType) {
+    public Car(String manufacture, BigDecimal price, EngineType engineType) {
         this.manufacture = manufacture;
         this.price = price;
         this.engineType = engineType;
@@ -21,7 +21,7 @@ public class Car {
         return price;
     }
 
-    public String getEngineType() {
+    public EngineType getEngineType() {
         return engineType;
     }
 
