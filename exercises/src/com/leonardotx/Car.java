@@ -13,6 +13,18 @@ public class Car {
         this.engineType = engineType;
     }
 
+    public String getManufacture() {
+        return manufacture;
+    }
+
+    public BigDecimal getPrice() {
+        return price;
+    }
+
+    public String getEngineType() {
+        return engineType;
+    }
+
     @Override
     public String toString() {
         return "Car{" +
