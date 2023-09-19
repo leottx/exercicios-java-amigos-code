@@ -3,18 +3,18 @@ package com.leonardotx;
 import java.math.BigDecimal;
 
 public class Car {
-    private String manufacture;
+    private String manufacturer;
     private BigDecimal price;
     private EngineType engineType;
 
-    public Car(String manufacture, BigDecimal price, EngineType engineType) {
-        this.manufacture = manufacture;
+    public Car(String manufacturer, BigDecimal price, EngineType engineType) {
+        this.manufacturer = manufacturer;
         this.price = price;
         this.engineType = engineType;
     }
 
-    public String getManufacture() {
-        return manufacture;
+    public String getManufacturer() {
+        return manufacturer;
     }
 
     public BigDecimal getPrice() {
@@ -28,7 +28,7 @@ public class Car {
     @Override
     public String toString() {
         return "Car{" +
-                "manufacture='" + manufacture + '\'' +
+                "manufacturer='" + manufacturer + '\'' +
                 ", price=" + price +
                 ", engineType='" + engineType + '\'' +
                 '}';

@@ -1,8 +1,8 @@
 package com.leonardotx;
 
 public enum EngineType {
-    ELETRIC,
+    ELECTRIC,
     GASOLINE,
-    DISEL,
+    DIESEL,
     ETHANOL
 }
