@@ -3,10 +3,10 @@ package com.leonardotx;
 import java.util.Objects;
 
 public class Employee {
-    private String name;
-    private int age;
-    private String address;
-    private String experience;
+    protected String name;
+    protected int age;
+    protected String address;
+    protected String experience;
 
     public Employee(String name, int age, String address, String experience) {
         this.name = name;
@@ -29,6 +29,10 @@ public class Employee {
 
     public String getExperience() {
         return experience;
+    }
+
+    public void sayHi() {
+        System.out.println("Hello, my name is " + name);
     }
 
     @Override

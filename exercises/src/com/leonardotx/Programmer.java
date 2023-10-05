@@ -19,4 +19,14 @@ public class Programmer extends Employee{
     public void writeSomeCode() {
         System.out.println("Writing some code");
     }
+
+    @Override
+    public void sayHi() {
+        String message = """
+                Hello my name is %s
+                I'm a programmer
+                """.formatted(this.name);
+
+        System.out.println(message);
+    }
 }
