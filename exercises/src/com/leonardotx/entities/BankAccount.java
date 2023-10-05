@@ -3,9 +3,9 @@ package com.leonardotx.entities;
 import java.math.BigDecimal;
 
 public class BankAccount {
-    String name;
-    BigDecimal balance;
-    boolean hasOverdraft;
+    private String name;
+    private BigDecimal balance;
+    private boolean hasOverdraft;
 
 
     public BankAccount(String name, BigDecimal balance, boolean hasOverdraft) {
